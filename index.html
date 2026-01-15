@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Bypass Browser</title>
+    <title>Unblocked Browser</title>
     <style>
         * {
             margin: 0;
@@ -12,380 +12,56 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
             padding: 20px;
         }
 
         .container {
-            max-width: 900px;
-            width: 100%;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
+            max-width: 600px;
         }
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            font-weight: 300;
         }
 
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
+        .tagline {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 40px;
         }
 
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.95;
-            line-height: 1.6;
-        }
-
-        .content {
-            padding: 60px 40px;
-        }
-
-        .intro-section {
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        .intro-section h2 {
-            color: #333;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-
-        .intro-section p {
-            color: #666;
+        . toolbar-tip {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius:  12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 1.05em;
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .steps-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .step {
-            background: #f8f9fa;
-            padding: 35px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
-        }
-
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: #667eea;
-            color: white;
-            border-radius: 50%;
-            font-weight: 700;
-            font-size: 1.2em;
-            margin-bottom: 15px;
-        }
-
-        .step h3 {
-            color: #333;
-            font-size: 1.3em;
-            margin-bottom: 12px;
-        }
-
-        .step p {
-            color: #666;
-            line-height: 1.7;
-            font-size: 0.95em;
-            margin-bottom: 20px;
-        }
-
-        .step ul {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-
-        .step ul li {
-            color: #555;
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-            font-size: 0.95em;
-        }
-
-        .step ul li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 12px 28px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.95em;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .cta-button:active {
-            transform: scale(0.98);
-        }
-
-        .secondary-button {
-            background: #e9ecef;
-            color: #667eea;
-        }
-
-        .secondary-button:hover {
-            background: #dee2e6;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
-        }
-
-        .benefits {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            padding: 40px;
-            border-radius: 10px;
-            margin-top: 50px;
-        }
-
-        .benefits h3 {
-            color: #333;
-            font-size: 1.3em;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-        }
-
-        .benefit-item {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .benefit-icon {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .benefit-item p {
-            color: #555;
-            font-size: 0.95em;
             line-height: 1.6;
         }
 
-        .footer {
-            background: #f8f9fa;
-            padding: 30px;
-            text-align: center;
-            color: #666;
-            font-size: 0.9em;
-            border-top: 1px solid #e9ecef;
-        }
-
-        .footer p {
-            margin: 8px 0;
-        }
-
-        /* Arrow pointer overlay */
-        .arrow-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 9999;
-            cursor: pointer;
-        }
-
-        .arrow-overlay.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .arrow-pointer {
-            position: fixed;
-            top: 20px;
-            right: 140px;
-            width: 0;
-            height: 0;
-            border-left: 30px solid transparent;
-            border-right: 30px solid transparent;
-            border-bottom: 40px solid #ffcc00;
-            animation: bounce 1s infinite;
-            transform: rotate(135deg);
-            filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.8));
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: rotate(135deg) translateY(0); }
-            50% { transform: rotate(135deg) translateY(-10px); }
-        }
-
-        .arrow-text {
-            position: fixed;
-            top: 80px;
-            right: 40px;
-            color: white;
-            font-size: 1.2em;
-            font-weight: bold;
-            background: #667eea;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 300px;
-        }
-
-        .close-hint {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-
-        @media (max-width: 768px) {
-            .steps-container {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .header {
-                padding: 40px 30px;
-            }
-
-            .header h1 {
-                font-size: 1.8em;
-            }
-
-            .content {
-                padding: 40px 30px;
-            }
-
-            .step {
-                padding: 25px;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
+        .toolbar-tip strong {
+            color: #fff;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Bypass successful</h1>
+        <h1>🦊 Unblocked Browser</h1>
+        <p class="tagline">Browse freely, your way</p>
+        
+        <div class="toolbar-tip">
+            <strong>💡 Tip:</strong> Use the toolbar icon to toggle idle lock, instantly lock the browser, or change idle lock timeout
         </div>
-
-        <div class="content">
-            <div class="intro-section">
-                <h2>Thanks for Installing - What's Next?</h2>
-                <p>Complete these final steps to bypass securly.</p>
-            </div>
-
-            <div class="steps-container">
-                <!-- Step 1: Proton Account -->
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Create Your Proton Account</h3>
-                    <p>Create your VPN account to protect yourself!</p>
-                    <a href="https://account.protonvpn.com/signup?plan=free&ref=noupsell" class="cta-button" target="_blank">Create Account</a>
-                </div>
-
-                <!-- Step 2: Enable VPN -->
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Activate VPN for Bypass</h3>
-                    <p>Click below and click "connect", make sure to grant any permission it asks!</p>
-                    <a href="moz-extension://56f94ed8-593a-4846-87c9-5ea6487feae5/popup.html" class="cta-button" target="_blank">Enable VPN</a>
-                </div>
-            </div>
-
     </div>
-
-    <!-- Arrow overlay -->
-    <div class="arrow-overlay" id="arrowOverlay" onclick="hideArrow()">
-        <div class="arrow-pointer"></div>
-        <div class="arrow-text">
-            Click the extensions icon (puzzle piece) in your browser toolbar, then click on Proton VPN and follow the steps it provides.
-        </div>
-        <div class="close-hint">Click anywhere to close</div>
-    </div>
-
-    <script>
-        // Add click handler to Enable VPN button
-        document.addEventListener('DOMContentLoaded', function() {
-            const vpnButtons = document.querySelectorAll('a[href*="moz-extension"]');
-            vpnButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showArrow();
-                });
-            });
-        });
-
-        function showArrow() {
-            document.getElementById('arrowOverlay').classList.add('active');
-        }
-
-        function hideArrow() {
-            document.getElementById('arrowOverlay').classList.remove('active');
-        }
-
-        // Close on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                hideArrow();
-            }
-        });
-    </script>
 </body>
 </html>
